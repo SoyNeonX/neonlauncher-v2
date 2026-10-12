@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import org.kordamp.ikonli.materialdesign2.MaterialDesignM?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" spacing="15" styleClass="mods-view">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    
+    <HBox spacing="15" alignment="CENTER_LEFT">
+        <Label text="Gestión de Mods" styleClass="view-title"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button fx:id="refreshBtn" text="Verificar actualizaciones" styleClass="secondary-button">
+            <graphic>
+                <FontIcon iconLiteral="mdi-refresh" iconSize="18"/>
+            </graphic>
+        </Button>
+        <Button fx:id="syncBtn" text="Sincronizar" styleClass="primary-button">
+            <graphic>
+                <FontIcon iconLiteral="mdi-sync" iconSize="18"/>
+            </graphic>
+        </Button>
+    </HBox>
+    
+    <ProgressBar fx:id="syncProgress" visible="false" prefHeight="4"/>
+    <Label fx:id="syncStatusLabel" text="" styleClass="status-text"/>
+    
+    <TableView fx:id="modsTable" styleClass="mods-table">
+        <columns>
+            <TableColumn fx:id="colEnabled" text="Activo" prefWidth="60">
+                <cellValueFactory><PropertyValueFactory property="enabled"/></cellValueFactory>
+                <cellFactory><CheckBoxTableCell/></cellFactory>
+            </TableColumn>
+            <TableColumn fx:id="colName" text="Mod" prefWidth="200">
+                <cellValueFactory><PropertyValueFactory property="name"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="colVersion" text="Versión" prefWidth="120">
+                <cellValueFactory><PropertyValueFactory property="version"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="colStatus" text="Estado" prefWidth="150">
+                <cellValueFactory><PropertyValueFactory property="status"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="colRequired" text="Requerido" prefWidth="80">
+                <cellValueFactory><PropertyValueFactory property="required"/></cellValueFactory>
+                <cellFactory><CheckBoxTableCell/></cellFactory>
+            </TableColumn>
+            <TableColumn fx:id="colAction" text="Acción" prefWidth="100">
+                <cellFactory><ModActionCellFactory/></cellFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+    
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Label fx:id="modCountLabel" text="0 mods" styleClass="status-text"/>
+    </HBox>
+</VBox>

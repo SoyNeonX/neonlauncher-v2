@@ -1,0 +1,30 @@
+# ---- secretos ----
+.env
+.env.*
+!.env.example
+
+# ---- node (por si algún módulo lo usa) ----
+node_modules/
+
+# ---- Gradle / Java / Kotlin (carpetas pesadas de build) ----
+build/
+out/
+.gradle/
+.kotlin/
+*.class
+*.jar
+*.war
+
+# ---- IDE ----
+.idea/
+*.iml
+.vscode/
+
+# ---- sistema / pesados (Unreal, videos, etc.) ----
+.DS_Store
+Thumbs.db
+*.mp4
+*.mkv
+*.mov
+*.avi
+*.wmv

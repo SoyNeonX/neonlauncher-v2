@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import org.kordamp.ikonli.materialdesign2.MaterialDesignM?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" spacing="20" alignment="TOP_CENTER" styleClass="home-view">
+    <padding><Insets top="30" right="40" bottom="40" left="40"/></padding>
+    
+    <HBox spacing="20" alignment="CENTER_LEFT" maxWidth="Infinity">
+        <VBox spacing="10" HBox.hgrow="ALWAYS">
+            <Label fx:id="welcomeLabel" text="Bienvenido" styleClass="welcome-title"/>
+            <Label fx:id="serverStatusLabel" text="Estado del servidor: Comprobando..." styleClass="server-status"/>
+        </VBox>
+        <Button fx:id="playButton" text="JUGAR" styleClass="play-button" prefWidth="180" prefHeight="60" maxWidth="180" maxHeight="60">
+            <graphic>
+                <FontIcon iconLiteral="mdi-play-circle" iconSize="28"/>
+            </graphic>
+        </Button>
+    </HBox>
+    
+    <Separator/>
+    
+    <HBox spacing="20" maxWidth="Infinity">
+        <VBox spacing="10" HBox.hgrow="ALWAYS" styleClass="info-card">
+            <Label text="Noticias y Actualizaciones" styleClass="section-title"/>
+            <ScrollPane fx:id="newsScroll" fitToWidth="true" styleClass="news-scroll">
+                <VBox fx:id="newsContainer" spacing="10" alignment="TOP_LEFT"/>
+            </ScrollPane>
+        </VBox>
+        
+        <VBox spacing="10" styleClass="info-card" prefWidth="300">
+            <Label text="Info del Servidor" styleClass="section-title"/>
+            <GridPane fx:id="serverInfoGrid" hgap="10" vgap="8">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="NEVER"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                </columnConstraints>
+            </GridPane>
+        </VBox>
+    </HBox>
+    
+    <HBox spacing="20" maxWidth="Infinity">
+        <VBox spacing="10" HBox.hgrow="ALWAYS" styleClass="info-card">
+            <Label text="Changelog" styleClass="section-title"/>
+            <TextArea fx:id="changelogArea" editable="false" wrapText="true" prefHeight="200" styleClass="changelog-area"/>
+        </VBox>
+    </HBox>
+</VBox>

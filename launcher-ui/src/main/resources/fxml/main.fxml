@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<BorderPane fx:id="rootPane" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.neonlauncher.ui.controller.MainController">
+    <top>
+        <ToolBar styleClass="top-toolbar">
+            <items>
+                <Label text="NeonLauncher" styleClass="app-title"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <ToggleButton fx:id="navLogin" text="Login" styleClass="nav-button"/>
+                <ToggleButton fx:id="navHome" text="Inicio" styleClass="nav-button"/>
+                <ToggleButton fx:id="navMods" text="Mods" styleClass="nav-button"/>
+                <ToggleButton fx:id="navProfile" text="Perfil" styleClass="nav-button"/>
+                <ToggleButton fx:id="navSettings" text="Config" styleClass="nav-button"/>
+                <Label fx:id="versionLabel" text="v1.0.0" styleClass="version-label"/>
+            </items>
+        </ToolBar>
+    </top>
+    <center>
+        <StackPane fx:id="contentArea" styleClass="content-area"/>
+    </center>
+    <bottom>
+        <StatusBar>
+            <Label fx:id="statusLabel" text="Listo" styleClass="status-label"/>
+        </StatusBar>
+    </bottom>
+</BorderPane>
