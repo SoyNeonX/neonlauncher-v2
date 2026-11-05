@@ -1,31 +1,32 @@
 plugins {
-    id("application")
+    application
     kotlin("jvm")
+    id("org.openjfx.javafxplugin") version "0.1.0"
+}
+
+kotlin {
+    jvmToolchain(21)
+}
+
+javafx {
+    version = "21.0.6"
+    modules = listOf("javafx.controls")
 }
 
 dependencies {
     implementation(project(":launcher-core"))
-
-    implementation("org.openjfx:javafx-controls:21.0.6")
-    implementation("org.openjfx:javafx-fxml:21.0.6")
-    implementation("org.openjfx:javafx-web:21.0.6")
-    implementation("org.openjfx:javafx-graphics:21.0.6")
-
-    implementation("org.kordamp.ikonli:ikonli-javafx:12.3.1")
-    implementation("org.kordamp.ikonli:ikonli-materialdesign2:12.3.1")
-    implementation("com.dlsc.formsfx:formsfx-core:11.2.1")
-
-    implementation("com.google.guava:guava:33.0.0-jre")
 }
 
 application {
-    mainClass.set("com.neonlauncher.LauncherApp")
+    mainClass.set("com.neonlauncher.ui.MainKt")
+    applicationDefaultJvmArgs = listOf("-Dfile.encoding=UTF-8")
 }
 
-tasks.named<JavaExec>("run") {
-    jvmArgs(
-        "--add-exports=javafx.graphics/com.sun.javafx.application=ALL-UNNAMED",
-        "--add-exports=javafx.controls/com.sun.javafx.scene.control=ALL-UNNAMED",
-        "--add-opens=javafx.graphics/com.sun.javafx.stage=ALL-UNNAMED"
-    )
+/** Laboratorio de diseño: renderiza los mockups a docs/mockup-*.png */
+tasks.register<JavaExec>("mockups") {
+    group = "design"
+    description = "Renderiza los mockups de diseño a docs/mockup-*.png"
+    mainClass.set("com.neonlauncher.ui.design.MockupsKt")
+    classpath = sourceSets["main"].runtimeClasspath
+    args(rootProject.projectDir.resolve("docs").absolutePath)
 }

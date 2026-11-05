@@ -1,3 +1,7 @@
+> ⚠️ **Documento histórico (versión 1.x).** Es el roadmap propuesto para el código anterior a la
+> reescritura 2.0. Varias propuestas ya están hechas; otras siguen vigentes. Ver
+> [`README.md`](README.md).
+
 # PROPUESTAS — NeonLauncher (roadmap de mejoras)
 
 > Documento de propuestas generado por el worker de `TAREA-003-propuestas`.

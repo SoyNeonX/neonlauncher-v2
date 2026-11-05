@@ -1,17 +1,39 @@
 plugins {
-    id("java-library")
+    `java-library`
     kotlin("jvm")
 }
 
+kotlin {
+    jvmToolchain(21)
+}
+
 dependencies {
-    implementation(project(":launcher-common"))
+    api(project(":launcher-common"))
 
-    implementation("com.fasterxml.jackson.core:jackson-databind:2.17.1")
-    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.17.1")
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.17.1")
+    testImplementation(platform("org.junit:junit-bom:5.11.0"))
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation("org.assertj:assertj-core:3.25.3")
+}
 
-    implementation("org.slf4j:slf4j-api:2.0.13")
-    implementation("ch.qos.logback:logback-classic:1.5.6")
+tasks.withType<Test> {
+    useJUnitPlatform()
+    testLogging {
+        events("passed", "failed", "skipped")
+    }
+}
 
-    implementation("org.bouncycastle:bcprov-jdk18on:1.78.1")
+/** Sonda del flujo de Microsoft: `gradlew :launcher-core:authProbe` */
+tasks.register<JavaExec>("authProbe") {
+    group = "verification"
+    description = "Pide un device code a Microsoft para validar el client_id"
+    mainClass.set("com.neonlauncher.core.auth.AuthProbeKt")
+    classpath = sourceSets["main"].runtimeClasspath
+}
+
+/** Sonda del descargador de versiones: `gradlew :launcher-core:downloadProbe` */
+tasks.register<JavaExec>("downloadProbe") {
+    group = "verification"
+    description = "Lee el catálogo de Mojang y reinstala una versión existente"
+    mainClass.set("com.neonlauncher.core.download.DownloadProbeKt")
+    classpath = sourceSets["main"].runtimeClasspath
 }

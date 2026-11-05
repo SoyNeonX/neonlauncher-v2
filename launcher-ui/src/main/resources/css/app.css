@@ -1,0 +1,919 @@
+/* NeonLauncher — piel fija estilo Minecraft Launcher: cristal sobre degradado.
+   Paleta literal: el motor CSS de JavaFX no soporta variables. */
+
+.root {
+    -fx-font-family: "Segoe UI Variable Text", "Segoe UI", sans-serif;
+    -fx-font-size: 13px;
+    -fx-base: #1a1030;
+    -fx-background: #0b0c10;
+    -fx-control-inner-background: #1a1030;
+    -fx-control-inner-background-alt: #14161b;
+    -fx-text-background-color: #f2efe9;
+    -fx-accent: #ff7a45;
+    -fx-focus-color: #ff7a45;
+    -fx-faint-focus-color: transparent;
+    -fx-selection-bar: #ff7a45;
+    -fx-selection-bar-non-focused: #2a1e3f;
+    -fx-text-fill: #f2efe9;
+}
+
+/* ------------------------------------------------------------------ rail derecho */
+
+.rail {
+    -fx-background-color: rgba(13, 14, 19, 0.85);
+    -fx-border-color: rgba(255, 255, 255, 0.07);
+    -fx-border-width: 0 1 0 0;
+    -fx-padding: 16 14 14 14;
+}
+
+.rail-brand-a {
+    -fx-text-fill: #faf7f1;
+    -fx-font-family: "Bahnschrift";
+    -fx-font-size: 13.5px;
+    -fx-font-weight: bold;
+}
+
+.rail-brand-b {
+    -fx-text-fill: #faf7f1;
+    -fx-font-family: "Bahnschrift";
+    -fx-font-size: 13.5px;
+    -fx-font-weight: bold;
+}
+
+.rail-section {
+    -fx-text-fill: #7a6a90;
+    -fx-font-size: 9px;
+    -fx-font-weight: bold;
+}
+
+.rail-item {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(255, 255, 255, 0.08);
+    -fx-border-width: 1;
+    -fx-border-radius: 12;
+    -fx-padding: 9 12 9 12;
+    -fx-cursor: hand;
+}
+
+.rail-item:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.10);
+}
+
+.rail-item-special {
+    -fx-background-color: rgba(255, 122, 69, 0.07);
+    -fx-border-color: rgba(255, 122, 69, 0.55);
+}
+
+.rail-item-active {
+    -fx-border-color: #ff7a45;
+    -fx-background-color: rgba(255, 122, 69, 0.14);
+}
+
+.rail-item-title {
+    -fx-text-fill: #faf7f1;
+    -fx-font-size: 11.5px;
+    -fx-font-weight: bold;
+}
+
+.rail-item-sub {
+    -fx-text-fill: #a08fb8;
+    -fx-font-size: 9.5px;
+}
+
+.rail-dot {
+    -fx-min-width: 7;
+    -fx-min-height: 7;
+    -fx-max-width: 7;
+    -fx-max-height: 7;
+    -fx-background-color: #6b5f80;
+    -fx-background-radius: 999;
+}
+
+.rail-dot-special {
+    -fx-min-width: 7;
+    -fx-min-height: 7;
+    -fx-max-width: 7;
+    -fx-max-height: 7;
+    -fx-background-color: #ff7a45;
+    -fx-background-radius: 999;
+}
+
+.rail-action-row {
+    -fx-padding: 8 10 8 10;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+}
+
+.rail-action-row:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+}
+
+.rail-action {
+    -fx-text-fill: #b9a7cc;
+    -fx-font-size: 11.5px;
+}
+
+.rail-profile {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-background-radius: 12;
+    -fx-padding: 8 10 8 8;
+    -fx-cursor: hand;
+}
+
+.rail-profile:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.11);
+}
+
+.rail-profile-name {
+    -fx-text-fill: #faf7f1;
+    -fx-font-size: 11.5px;
+    -fx-font-weight: bold;
+}
+
+.rail-profile-state {
+    -fx-text-fill: #a08fb8;
+    -fx-font-size: 9.5px;
+}
+
+/* ------------------------------------------------------------------ onboarding */
+
+.onboarding-title {
+    -fx-text-fill: #faf7f1;
+    -fx-font-family: "Bahnschrift";
+    -fx-font-size: 34px;
+    -fx-font-weight: bold;
+}
+
+.onboarding-sub {
+    -fx-text-fill: #b49fc9;
+    -fx-font-size: 13px;
+    -fx-text-alignment: center;
+}
+
+.onboarding-version {
+    -fx-text-fill: #6b5f80;
+    -fx-font-size: 10.5px;
+}
+
+/* ------------------------------------------------------------------ transición de lanzamiento */
+
+.launch-overlay {
+    -fx-background-color: rgba(9, 10, 14, 0.90);
+}
+
+.launch-title {
+    -fx-text-fill: #faf7f1;
+    -fx-font-family: "Bahnschrift";
+    -fx-font-size: 19px;
+    -fx-font-weight: bold;
+}
+
+.launch-sub {
+    -fx-text-fill: #9aa0aa;
+    -fx-font-size: 11.5px;
+}
+
+.launch-bar {
+    -fx-pref-height: 5;
+    -fx-min-height: 5;
+    -fx-max-height: 5;
+}
+
+.launch-bar > .track {
+    -fx-background-color: rgba(255, 255, 255, 0.12);
+    -fx-background-radius: 999;
+    -fx-background-insets: 0;
+}
+
+.launch-bar > .bar {
+    -fx-background-color: #ff7a45;
+    -fx-background-radius: 999;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+/* ------------------------------------------------------------------ pasos de arranque */
+
+.step-pill {
+    -fx-background-color: rgba(255, 255, 255, 0.14);
+    -fx-background-radius: 999;
+}
+
+.step-pill-on {
+    -fx-background-color: #ff7a45;
+}
+
+/* ------------------------------------------------------------------ ventana */
+
+.window {
+    -fx-background-color: #090a0e;
+    -fx-border-color: rgba(255, 255, 255, 0.10);
+    -fx-border-width: 1;
+}
+
+.titlebar {
+    -fx-background-color: rgba(13, 14, 19, 0.92);
+    -fx-border-color: rgba(255, 255, 255, 0.07);
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 0 8 0 14;
+    -fx-min-height: 40;
+    -fx-pref-height: 40;
+}
+
+.titlebar-btn {
+    -fx-text-fill: #b9a7cc;
+    -fx-font-size: 12px;
+    -fx-min-width: 30;
+    -fx-min-height: 26;
+    -fx-pref-width: 30;
+    -fx-pref-height: 26;
+    -fx-background-radius: 7;
+    -fx-cursor: hand;
+}
+
+.titlebar-btn:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.10);
+    -fx-text-fill: #f2efe9;
+}
+
+.titlebar-btn.close:hover {
+    -fx-background-color: #ff4d6d;
+    -fx-text-fill: #140610;
+}
+
+.nav-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #b9a7cc;
+    -fx-font-size: 12.5px;
+    -fx-padding: 7 15 7 15;
+    -fx-background-radius: 9;
+    -fx-cursor: hand;
+}
+
+.nav-btn:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-text-fill: #f2efe9;
+}
+
+.nav-btn:selected {
+    -fx-background-color: rgba(255, 122, 69, 0.18);
+    -fx-text-fill: #ff9a5a;
+    -fx-font-weight: bold;
+}
+
+.content {
+    -fx-background-color: transparent;
+}
+
+/* ------------------------------------------------------------------ tipografía */
+
+.title {
+    -fx-text-fill: #f2efe9;
+    -fx-font-family: "Bahnschrift";
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+}
+
+.subtitle {
+    -fx-text-fill: #b9a7cc;
+    -fx-font-size: 12.5px;
+}
+
+.hero-name {
+    -fx-text-fill: #faf7f1;
+    -fx-font-family: "Bahnschrift";
+    -fx-font-size: 46px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.45), 18, 0.1, 0, 6);
+}
+
+.hero-sub {
+    -fx-text-fill: #c6b4d6;
+    -fx-font-size: 13px;
+}
+
+.hero-art {
+    -fx-background-color: rgba(255, 255, 255, 0.035);
+    -fx-background-radius: 20;
+    -fx-border-color: rgba(255, 255, 255, 0.09);
+    -fx-border-width: 1;
+    -fx-border-radius: 20;
+}
+
+.hero-art-numeral {
+    -fx-text-fill: rgba(255, 255, 255, 0.07);
+    -fx-font-size: 140px;
+    -fx-font-weight: bold;
+}
+
+.hero-art-eyebrow {
+    -fx-text-fill: #ff9a5a;
+    -fx-font-size: 9.5px;
+    -fx-font-weight: bold;
+}
+
+.hero-art-caption {
+    -fx-text-fill: #e6d6ee;
+    -fx-font-size: 12px;
+}
+
+.section-title {
+    -fx-text-fill: #b49fc9;
+    -fx-font-size: 9.5px;
+    -fx-font-weight: bold;
+}
+
+.field-label {
+    -fx-text-fill: #9d8ab0;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+}
+
+.hint {
+    -fx-text-fill: #a08fb8;
+    -fx-font-size: 11.5px;
+}
+
+.value {
+    -fx-text-fill: #f2efe9;
+    -fx-font-size: 12px;
+}
+
+.detail-name {
+    -fx-text-fill: #b49fc9;
+    -fx-font-size: 11.5px;
+}
+
+.detail-value {
+    -fx-text-fill: #f6ece1;
+    -fx-font-size: 11.5px;
+    -fx-font-weight: bold;
+}
+
+.news-title {
+    -fx-text-fill: #f2efe9;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+.news-body {
+    -fx-text-fill: #b49fc9;
+    -fx-font-size: 11.5px;
+}
+
+.code-value {
+    -fx-font-family: "Cascadia Mono", "Consolas", monospace;
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffd9a8;
+    -fx-effect: dropshadow(gaussian, rgba(255, 122, 69, 0.35), 18, 0.2, 0, 0);
+}
+
+/* ------------------------------------------------------------------ cristal */
+
+.card {
+    -fx-background-color: rgba(255, 255, 255, 0.045);
+    -fx-background-radius: 16;
+    -fx-border-color: rgba(255, 255, 255, 0.09);
+    -fx-border-width: 1;
+    -fx-border-radius: 16;
+    -fx-padding: 18;
+}
+
+.tile {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-background-radius: 16;
+    -fx-border-color: rgba(255, 255, 255, 0.09);
+    -fx-border-width: 1;
+    -fx-border-radius: 16;
+    -fx-padding: 16;
+    -fx-cursor: hand;
+}
+
+.tile:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.10);
+}
+
+.tile-active {
+    -fx-border-color: rgba(255, 122, 69, 0.85);
+    -fx-background-color: rgba(255, 122, 69, 0.13);
+}
+
+.tile-name {
+    -fx-text-fill: #faf7f1;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.tile-action {
+    -fx-text-fill: #ff9a5a;
+    -fx-font-size: 11.5px;
+    -fx-font-weight: bold;
+}
+
+.tile-action-active {
+    -fx-text-fill: #52e5a3;
+    -fx-font-size: 11.5px;
+    -fx-font-weight: bold;
+}
+
+.account-pill {
+    -fx-background-color: rgba(255, 255, 255, 0.07);
+    -fx-background-radius: 999;
+    -fx-border-color: rgba(255, 255, 255, 0.10);
+    -fx-border-width: 1;
+    -fx-border-radius: 999;
+    -fx-padding: 6 14 6 6;
+    -fx-cursor: hand;
+}
+
+.account-pill:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.12);
+}
+
+.account-name {
+    -fx-text-fill: #faf7f1;
+    -fx-font-size: 12.5px;
+    -fx-font-weight: bold;
+}
+
+.account-state {
+    -fx-text-fill: #a08fb8;
+    -fx-font-size: 10.5px;
+}
+
+.skin-frame {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-background-radius: 999;
+    -fx-border-color: rgba(255, 255, 255, 0.14);
+    -fx-border-width: 1;
+    -fx-border-radius: 999;
+}
+
+/* ------------------------------------------------------------------ arranque */
+
+.startup-overlay {
+    -fx-background-color: #090a0e;
+}
+
+.startup-status {
+    -fx-text-fill: #faf7f1;
+    -fx-font-size: 13.5px;
+}
+
+.startup-detail {
+    -fx-text-fill: #8a7a9c;
+    -fx-font-size: 11px;
+}
+
+.startup-bar {
+    -fx-pref-height: 4;
+    -fx-min-height: 4;
+}
+
+/* ------------------------------------------------------------------ tabla de instalaciones */
+
+.row {
+    -fx-background-color: rgba(14, 15, 20, 0.72);
+    -fx-background-radius: 10;
+    -fx-padding: 10 14 10 14;
+    -fx-cursor: hand;
+}
+
+.row:hover {
+    -fx-background-color: rgba(32, 34, 42, 0.88);
+}
+
+.row-active {
+    -fx-background-color: rgba(255, 122, 69, 0.14);
+    -fx-border-color: rgba(255, 122, 69, 0.55);
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+}
+
+.row-name {
+    -fx-text-fill: #faf7f1;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.row-meta {
+    -fx-text-fill: #b49fc9;
+    -fx-font-size: 11.5px;
+}
+
+.row-dot {
+    -fx-text-fill: #5e5270;
+    -fx-font-size: 13px;
+}
+
+.row-dot-active {
+    -fx-text-fill: #52e5a3;
+    -fx-font-size: 13px;
+}
+
+.column-head {
+    -fx-text-fill: #7a6a90;
+    -fx-font-size: 9.5px;
+    -fx-font-weight: bold;
+}
+
+/* ------------------------------------------------------------------ chips */
+
+.chip {
+    -fx-background-color: rgba(255, 122, 69, 0.16);
+    -fx-text-fill: #ff9a5a;
+    -fx-background-radius: 999;
+    -fx-padding: 4 11 4 11;
+    -fx-font-size: 9.5px;
+    -fx-font-weight: bold;
+}
+
+.chip-warn {
+    -fx-background-color: rgba(255, 196, 107, 0.14);
+    -fx-text-fill: #ffc46b;
+    -fx-border-color: rgba(255, 196, 107, 0.35);
+    -fx-border-width: 1;
+    -fx-border-radius: 999;
+}
+
+.chip-live {
+    -fx-background-color: rgba(82, 229, 163, 0.14);
+    -fx-text-fill: #52e5a3;
+    -fx-border-color: rgba(82, 229, 163, 0.35);
+    -fx-border-width: 1;
+    -fx-border-radius: 999;
+}
+
+/* ------------------------------------------------------------------ jugar */
+
+.play-btn {
+    -fx-background-color: #ff7a45;
+    -fx-text-fill: #140610;
+    -fx-font-size: 14.5px;
+    -fx-font-weight: bold;
+    -fx-padding: 18 34 18 34;
+    -fx-background-radius: 12;
+    -fx-cursor: hand;
+}
+
+.play-btn:hover {
+    -fx-background-color: #ff8f63;
+}
+
+.play-btn:disabled {
+    -fx-opacity: 0.35;
+}
+
+.play-btn.stop {
+    -fx-background-color: #ff4d6d;
+    -fx-text-fill: #140610;
+}
+
+.play-icon {
+    -fx-shape: "M 0 0 L 13 8 L 0 16 Z";
+    -fx-background-color: #140610;
+    -fx-min-width: 13;
+    -fx-min-height: 16;
+    -fx-max-width: 13;
+    -fx-max-height: 16;
+}
+
+/* ------------------------------------------------------------------ selector de instancia */
+
+.instance-select {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(255, 255, 255, 0.10);
+    -fx-border-width: 1;
+    -fx-border-radius: 12;
+    -fx-padding: 5 8 5 10;
+    -fx-cursor: hand;
+}
+
+.instance-select:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.11);
+}
+
+.instance-select .label {
+    -fx-text-fill: #f6ece1;
+    -fx-font-size: 12px;
+}
+
+.instance-select .arrow {
+    -fx-background-color: #b49fc9;
+}
+
+.context-menu {
+    -fx-background-color: #1a1030;
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+    -fx-border-width: 1;
+    -fx-border-radius: 12;
+    -fx-padding: 6;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 22, 0.2, 0, 8);
+}
+
+.menu-item {
+    -fx-background-radius: 8;
+    -fx-padding: 6 12 6 12;
+}
+
+.menu-item .label {
+    -fx-text-fill: #f6ece1;
+    -fx-font-size: 12px;
+}
+
+.menu-item:focused {
+    -fx-background-color: rgba(255, 122, 69, 0.22);
+}
+
+.menu-item:disabled .label {
+    -fx-text-fill: #8a7a9c;
+}
+
+.separator .line {
+    -fx-border-color: rgba(255, 255, 255, 0.10);
+}
+
+/* ------------------------------------------------------------------ controles */
+
+.ghost-btn {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-text-fill: #f0e2ea;
+    -fx-border-color: rgba(255, 255, 255, 0.14);
+    -fx-border-width: 1;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-padding: 10 16 10 16;
+    -fx-font-size: 12px;
+    -fx-cursor: hand;
+}
+
+.ghost-btn:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.11);
+    -fx-text-fill: #f2efe9;
+}
+
+.primary-btn {
+    -fx-background-color: #ff7a45;
+    -fx-text-fill: #140610;
+    -fx-padding: 11 22 11 22;
+    -fx-background-radius: 10;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.primary-btn:hover {
+    -fx-background-color: #ff9055;
+}
+
+.text-input {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-text-fill: #f2efe9;
+    -fx-prompt-text-fill: #9d8ab0;
+    -fx-padding: 10 12 10 12;
+    -fx-background-radius: 10;
+    -fx-border-color: rgba(255, 255, 255, 0.10);
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-highlight-fill: rgba(255, 122, 69, 0.35);
+    -fx-highlight-text-fill: #f2efe9;
+}
+
+.text-input:focused {
+    -fx-border-color: #ff7a45;
+}
+
+.combo {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-border-color: rgba(255, 255, 255, 0.10);
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 2;
+}
+
+.combo .list-cell {
+    -fx-text-fill: #f2efe9;
+    -fx-background-color: transparent;
+    -fx-padding: 6 10 6 10;
+    -fx-font-size: 12.5px;
+}
+
+.combo .arrow {
+    -fx-background-color: #b49fc9;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: #1a1030;
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+    -fx-border-width: 1;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 6;
+}
+
+.combo-box-popup .list-view .list-cell {
+    -fx-text-fill: #f6ece1;
+    -fx-background-color: transparent;
+    -fx-padding: 7 10 7 10;
+    -fx-background-radius: 8;
+}
+
+.combo-box-popup .list-view .list-cell:filled:hover {
+    -fx-background-color: rgba(255, 122, 69, 0.22);
+}
+
+.check {
+    -fx-text-fill: #d8c8e4;
+    -fx-font-size: 12px;
+}
+
+.check .box {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-border-color: rgba(255, 255, 255, 0.14);
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 3;
+}
+
+.check:selected .mark {
+    -fx-background-color: #ff7a45;
+}
+
+.slider {
+    -fx-pref-height: 26;
+}
+
+.slider .track {
+    -fx-background-color: rgba(255, 255, 255, 0.14);
+    -fx-pref-height: 5;
+    -fx-background-radius: 999;
+}
+
+.slider .thumb {
+    -fx-background-color: #ff7a45;
+    -fx-pref-width: 16;
+    -fx-pref-height: 16;
+    -fx-background-radius: 8;
+    -fx-effect: dropshadow(gaussian, rgba(255, 122, 69, 0.55), 12, 0.3, 0, 0);
+}
+
+/* ------------------------------------------------------------------ consola */
+
+.console-drawer {
+    -fx-background-color: rgba(8, 4, 15, 0.72);
+    -fx-border-color: rgba(255, 255, 255, 0.08);
+    -fx-border-width: 1 0 0 0;
+    -fx-padding: 10 18 12 18;
+}
+
+.console {
+    -fx-control-inner-background: rgba(5, 3, 10, 0.85);
+    -fx-text-fill: #c9b8d8;
+    -fx-font-family: "Cascadia Mono", "Consolas", monospace;
+    -fx-font-size: 11.5px;
+    -fx-background-color: transparent;
+    -fx-border-color: rgba(255, 255, 255, 0.08);
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+.console .content {
+    -fx-background-color: rgba(5, 3, 10, 0.85);
+    -fx-background-radius: 10;
+    -fx-padding: 8 10 8 10;
+}
+
+.console .scroll-pane,
+.console .scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+/* ------------------------------------------------------------------ estado */
+
+.status-bar {
+    -fx-background-color: rgba(13, 14, 19, 0.92);
+    -fx-border-color: rgba(255, 255, 255, 0.07);
+    -fx-border-width: 1 0 0 0;
+    -fx-padding: 7 18 7 18;
+    -fx-min-height: 34;
+}
+
+.status-text {
+    -fx-text-fill: #a08fb8;
+    -fx-font-size: 11px;
+}
+
+.status-dot {
+    -fx-fill: #52e5a3;
+}
+
+.link-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #b49fc9;
+    -fx-font-size: 10.5px;
+    -fx-padding: 3 8 3 8;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+
+.link-btn:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.10);
+    -fx-text-fill: #f2efe9;
+}
+
+/* ------------------------------------------------------------------ misc */
+
+.avatar {
+    -fx-min-width: 28;
+    -fx-min-height: 28;
+    -fx-max-width: 28;
+    -fx-max-height: 28;
+    -fx-background-color: rgba(255, 122, 69, 0.18);
+    -fx-background-radius: 14;
+    -fx-border-color: rgba(255, 122, 69, 0.45);
+    -fx-border-width: 1;
+    -fx-border-radius: 14;
+}
+
+.avatar-letter {
+    -fx-text-fill: #ff9a5a;
+    -fx-font-size: 11.5px;
+    -fx-font-weight: bold;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-padding: 0;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical,
+.scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: rgba(255, 255, 255, 0.18);
+    -fx-background-radius: 999;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.30);
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 3;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-background-color: #a08fb8;
+    -fx-padding: 2;
+}
+
+.tooltip {
+    -fx-background-color: #1a1030;
+    -fx-text-fill: #f2efe9;
+    -fx-font-size: 11px;
+    -fx-background-radius: 8;
+    -fx-padding: 6 10 6 10;
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+}
+
+/* ------------------------------------------------------------------ badges de instancia */
+
+.rail-badge {
+    -fx-min-width: 26;
+    -fx-min-height: 26;
+    -fx-max-width: 26;
+    -fx-max-height: 26;
+    -fx-background-color: rgba(255, 255, 255, 0.07);
+    -fx-background-radius: 8;
+    -fx-border-color: rgba(255, 255, 255, 0.10);
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+}
+
+.rail-badge-studio {
+    -fx-border-color: rgba(255, 122, 69, 0.55);
+}
+
+.rail-badge-letter {
+    -fx-text-fill: #f2efe9;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}

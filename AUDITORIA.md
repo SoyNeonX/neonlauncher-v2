@@ -1,3 +1,7 @@
+> ⚠️ **Documento histórico (versión 1.x).** Describe el código anterior a la reescritura 2.0 y se
+> conserva como registro de los problemas encontrados. **No** refleja el estado actual: ver
+> [`README.md`](README.md).
+
 # AUDITORÍA TÉCNICA — NeonLauncher
 
 > Entregable de `TAREA-002-auditoria` (worker). **Auditoría de solo lectura**: no se modificó

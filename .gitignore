@@ -13,7 +13,13 @@ out/
 .kotlin/
 *.class
 *.jar
+!gradle/wrapper/gradle-wrapper.jar
 *.war
+
+# ---- distribución (los binarios van a Releases, no al repo) ----
+dist/
+tools/wix311/
+*.part
 
 # ---- IDE ----
 .idea/
