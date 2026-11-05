@@ -93,7 +93,9 @@ internal class StartupOverlay : StackPane() {
             setOnFinished {
                 isVisible = false
                 isManaged = false
-                after()
+                // Ojo: adentro de un handler de animación JavaFX prohíbe showAndWait
+                // ("not allowed during animation or layout processing"), así que se difiere.
+                javafx.application.Platform.runLater { after() }
             }
             play()
         }

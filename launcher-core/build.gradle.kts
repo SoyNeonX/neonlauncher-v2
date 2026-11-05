@@ -37,3 +37,11 @@ tasks.register<JavaExec>("downloadProbe") {
     mainClass.set("com.neonlauncher.core.download.DownloadProbeKt")
     classpath = sourceSets["main"].runtimeClasspath
 }
+
+/** Sonda del auto-update: `gradlew :launcher-core:updateProbe` */
+tasks.register<JavaExec>("updateProbe") {
+    group = "verification"
+    description = "Consulta GitHub Releases como lo hace el launcher"
+    mainClass.set("com.neonlauncher.core.update.UpdateProbeKt")
+    classpath = sourceSets["main"].runtimeClasspath
+}
